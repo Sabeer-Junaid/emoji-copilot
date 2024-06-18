@@ -167,4 +167,4 @@ Don't forget to give the project a star! Thanks again!
 
 ## 📄 License
 
-<a href="https://github.com/Sabeer-Junaid/emoji-copilot/blob/main/LICENSE"></a> MIT </a>
+<a href="https://github.com/Sabeer-Junaid/emoji-copilot/blob/main/LICENSE"> MIT </a>
