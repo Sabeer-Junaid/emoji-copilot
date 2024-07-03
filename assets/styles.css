@@ -61,44 +61,44 @@
 
 .update-logs {
   background-color: blueviolet;
-  height: 70px;
-  width: 120px;
+  height: 50px;
+  width: 100px;
   margin-top: 1rem;
   margin-left: 0.4rem;
   box-shadow: 3px 3px 1px var(--yellow);
 }
 
 .update-img {
-  height: 70px;
-  width: 120px;
+  height: 50px;
+  width: 100px;
 }
 
 .request-emoji {
   background-color: blueviolet;
-  height: 70px;
-  width: 120px;
+  height: 50px;
+  width: 100px;
   margin-top: 1rem;
   margin-left: 0.4rem;
   box-shadow: 3px 3px 1px var(--yellow);
 }
 
 .request-img {
-  height: 70px;
-  width: 120px;
+  height: 50px;
+  width: 100px;
 }
 
 .report-bug {
   background-color: blueviolet;
-  height: 70px;
-  width: 120px;
+  height: 50px;
+  width: 100px;
   margin-top: 1rem;
   margin-left: 0.4rem;
   box-shadow: 3px 3px 1px var(--yellow);
 }
 
 .report-img {
-  height: 70px;
-  width: 120px;
+  height: 50px;
+  width: 100px;
 }
 
 @media (min-width: 768px) {
