@@ -3,6 +3,8 @@
   --purple: hsl(270, 47%, 30%);
 }
 
+/* Navbar */
+
 .navbar {
   background-color: var(--yellow);
   margin-top: 0.5rem;
@@ -15,8 +17,34 @@
   width: 40px;
 }
 
+@media (min-width: 768px) {
+    .nav-logo{
+        height: 80px;
+        width: 80px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .nav-logo{
+        height: 100px;
+        width: 100px;
+    }
+}
+
 .nav-text {
   font-size: 20px;
   text-align: center;
   justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .nav-text {
+        font-size: 32px;
+    }
+}
+
+@media (min-wdith: 1024px) {
+    .nav-text{
+        font-size: 36px;
+    }
 }
