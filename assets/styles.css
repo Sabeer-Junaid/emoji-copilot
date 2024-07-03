@@ -61,7 +61,7 @@
   }
 }
 
-/* Request Emoji */
+/* Request Emoji, Update logs, Report Bug */
 
 .container {
   display: flex;
@@ -207,4 +207,12 @@
     height: 140px;
     width: 310px;
   }
+}
+
+/* description */
+
+.description{
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  margin-top: 1rem;
 }
