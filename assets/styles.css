@@ -59,20 +59,32 @@
   text-align: center;
 }
 
-.request-emoji {
-  background-color: blueviolet;
-  height: 70px;
-  width: 120px;
-  margin-top: 1rem;
-  margin-left: 0.4rem;
-}
-
 .update-logs {
   background-color: blueviolet;
   height: 70px;
   width: 120px;
   margin-top: 1rem;
   margin-left: 0.4rem;
+  box-shadow: 3px 3px 1px var(--yellow);
+}
+
+.update-img {
+  height: 70px;
+    width: 120px;
+}
+
+.request-emoji {
+  background-color: blueviolet;
+  height: 70px;
+  width: 120px;
+  margin-top: 1rem;
+  margin-left: 0.4rem;
+  box-shadow: 3px 3px 1px var(--yellow);
+}
+
+.request-img {
+  height: 70px;
+    width: 120px;
 }
 
 .report-bug{
@@ -81,4 +93,75 @@
   width: 120px;
   margin-top: 1rem;
   margin-left: 0.4rem;
+  box-shadow: 3px 3px 1px var(--yellow);
 }
+
+.report-img{
+  height: 70px;
+    width: 120px;
+}
+
+@media (min-width:768px) {
+  .update-logs {
+    height: 100px;
+    width: 220px;
+  }
+
+  .update-img {
+    height: 100px;
+    width: 220px;
+  }
+
+  .request-emoji {
+    height: 100px;
+    width: 220px;
+  }
+
+  .request-img{
+    height: 100px;
+    width: 220px;
+  }
+  
+  .report-bug{
+    height: 100px;
+    width: 220px;
+  }
+
+  .report-img{
+    height: 100px;
+    width: 220px;
+  }
+}
+
+@media (min-width:1024px) {
+  .update-logs {
+    height: 140px;
+    width: 310px;
+  }
+
+  .update-img{
+    height: 140px;
+    width: 310px;
+  }
+
+  .request-emoji {
+    height: 140px;
+    width: 310px;
+  }
+
+  .request-img{
+    height: 140px;
+    width: 310px;
+  }
+  
+  .report-bug{
+    height: 140px;
+    width: 310px;
+  }
+
+  .report-img{
+    height: 140px;
+    width: 310px;
+  }
+}
+
