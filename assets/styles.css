@@ -18,41 +18,41 @@
 }
 
 @media (min-width: 768px) {
-    .nav-logo{
-        height: 80px;
-        width: 80px;
-    }
+  .nav-logo {
+    height: 80px;
+    width: 80px;
+  }
 }
 
 @media (min-width: 1024px) {
-    .nav-logo{
-        height: 100px;
-        width: 100px;
-    }
+  .nav-logo {
+    height: 100px;
+    width: 100px;
+  }
 }
 
 .nav-text {
   font-size: 16px;
   text-align: center;
   justify-content: center;
-  font-family: 'Press Start 2P',sans-serif;
+  font-family: "Press Start 2P", sans-serif;
 }
 
 @media (min-width: 768px) {
-    .nav-text {
-        font-size: 32px;
-    }
+  .nav-text {
+    font-size: 32px;
+  }
 }
 
 @media (min-wdith: 1024px) {
-    .nav-text{
-        font-size: 36px;
-    }
+  .nav-text {
+    font-size: 36px;
+  }
 }
 
 /* Request Emoji */
 
-.container{
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,7 +70,7 @@
 
 .update-img {
   height: 70px;
-    width: 120px;
+  width: 120px;
 }
 
 .request-emoji {
@@ -84,10 +84,10 @@
 
 .request-img {
   height: 70px;
-    width: 120px;
+  width: 120px;
 }
 
-.report-bug{
+.report-bug {
   background-color: blueviolet;
   height: 70px;
   width: 120px;
@@ -96,12 +96,12 @@
   box-shadow: 3px 3px 1px var(--yellow);
 }
 
-.report-img{
+.report-img {
   height: 70px;
-    width: 120px;
+  width: 120px;
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .update-logs {
     height: 100px;
     width: 220px;
@@ -117,29 +117,29 @@
     width: 220px;
   }
 
-  .request-img{
-    height: 100px;
-    width: 220px;
-  }
-  
-  .report-bug{
+  .request-img {
     height: 100px;
     width: 220px;
   }
 
-  .report-img{
+  .report-bug {
+    height: 100px;
+    width: 220px;
+  }
+
+  .report-img {
     height: 100px;
     width: 220px;
   }
 }
 
-@media (min-width:1024px) {
+@media (min-width: 1024px) {
   .update-logs {
     height: 140px;
     width: 310px;
   }
 
-  .update-img{
+  .update-img {
     height: 140px;
     width: 310px;
   }
@@ -149,19 +149,18 @@
     width: 310px;
   }
 
-  .request-img{
-    height: 140px;
-    width: 310px;
-  }
-  
-  .report-bug{
+  .request-img {
     height: 140px;
     width: 310px;
   }
 
-  .report-img{
+  .report-bug {
+    height: 140px;
+    width: 310px;
+  }
+
+  .report-img {
     height: 140px;
     width: 310px;
   }
 }
-
