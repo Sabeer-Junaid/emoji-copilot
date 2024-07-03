@@ -101,6 +101,38 @@
   width: 100px;
 }
 
+@media (min-width: 425px) {
+  .update-logs {
+    height: 70px;
+    width: 120px;
+  }
+
+  .update-img {
+    height: 70px;
+    width: 120px;
+  }
+
+  .request-emoji {
+    height: 70px;
+    width: 120px;
+  }
+
+  .request-img {
+    height: 70px;
+    width: 120px;
+  }
+
+  .report-bug {
+    height: 70px;
+    width: 120px;
+  }
+
+  .report-img {
+    height: 70px;
+    width: 120px;
+  }
+}
+
 @media (min-width: 768px) {
   .update-logs {
     height: 100px;
