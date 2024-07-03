@@ -7,4 +7,14 @@
     background-color: var(--yellow);
     margin-top: 0.5rem;
     box-shadow: 10px 10px 1px var(--purple);
+    width: 90%;
+}
+
+.nav-logo{
+    height: 40px; 
+    width: 40px;
+}
+
+.nav-text{
+    font-size: 20px;
 }
