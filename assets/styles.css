@@ -49,3 +49,36 @@
         font-size: 36px;
     }
 }
+
+/* Request Emoji */
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.request-emoji {
+  background-color: blueviolet;
+  height: 70px;
+  width: 120px;
+  margin-top: 1rem;
+  margin-left: 0.4rem;
+}
+
+.update-logs {
+  background-color: blueviolet;
+  height: 70px;
+  width: 120px;
+  margin-top: 1rem;
+  margin-left: 0.4rem;
+}
+
+.report-bug{
+  background-color: blueviolet;
+  height: 70px;
+  width: 120px;
+  margin-top: 1rem;
+  margin-left: 0.4rem;
+}
