@@ -232,6 +232,7 @@
   align-items: center;
   cursor: pointer;
   flex-wrap: wrap;
+  animation: fadein 0.5s forwards;
 }
 
 @media (min-width: 425px) {
@@ -252,11 +253,12 @@
   }
 }
 
-.emoji-table {
+.face-emoji-table {
   display: flex;
   flex-wrap: wrap;
   cursor: pointer;
   margin-top: 0.5rem;
+  animation: fadein 0.5s forwards;
 }
 
 .box {
@@ -267,6 +269,7 @@
   flex-wrap: wrap;
   margin: 0.2rem;
   box-shadow: 2px 2px 2px 2px var(--yellow);
+  animation: fadein 0.5s forwards;
 }
 
 p.emoji {
@@ -275,4 +278,5 @@ p.emoji {
   align-items: center;
   text-align: center;
   margin-top: 0.3rem;
+  animation: fadein 2s forwards;
 }
