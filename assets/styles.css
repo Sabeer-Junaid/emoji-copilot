@@ -220,9 +220,25 @@
 
 /* Emojis */
 
+.categories {
+  border: black solid thin;
+  border-radius: 1rem;
+  display: flex;
+  font-size: 2rem;
+  gap: 20px;
+  width: 50%;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+  flex-wrap: wrap;
+}
+
 .emoji-table {
   display: flex;
   flex-wrap: wrap;
+  cursor: pointer;
+  margin-top: 0.5rem;
 }
 
 .box {
