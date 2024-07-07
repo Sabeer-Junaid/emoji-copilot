@@ -211,9 +211,34 @@
 
 /* description */
 
-.description{
+.description {
   font-size: 14px;
   font-family: "Poppins", sans-serif;
   margin-top: 1rem;
   animation: fadein 1s forwards;
+}
+
+/* Emojis */
+
+.emoji-table {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  background-color: white;
+  height: 60px;
+  width: 60px;
+  display: inline-block;
+  flex-wrap: wrap;
+  margin: 0.2rem;
+  box-shadow: 2px 2px 2px 2px var(--yellow);
+}
+
+p.emoji {
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 0.3rem;
 }
