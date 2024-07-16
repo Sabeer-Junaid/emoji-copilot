@@ -3,6 +3,10 @@
   --purple: hsl(270, 47%, 30%);
 }
 
+body {
+  scroll-behavior: smooth;
+}
+
 /* Navbar */
 
 .navbar {
@@ -230,8 +234,8 @@
 
 .box {
   background-color: white;
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 50px;
   display: inline-block;
   flex-wrap: wrap;
   margin: 0.2rem;
@@ -240,7 +244,7 @@
 }
 
 p.emoji {
-  font-size: 0.8rem;
+  font-size: 1.5rem;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -259,8 +263,3 @@ p.emoji {
   }
 }
 
-h1 {
-  font-size: 0.7rem;
-  font-family: "Poppins", sans-serif;
-  margin-top: 1rem;
-}
