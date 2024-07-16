@@ -220,39 +220,6 @@
 
 /* Emojis */
 
-.categories {
-  /* border: black solid thin; */
-  /* border-radius: 1rem; */
-  display: flex;
-  font-size: 1rem;
-  gap: 5px;
-  width: 100%;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  cursor: pointer;
-  flex-wrap: wrap;
-  animation: fadein 0.5s forwards;
-}
-
-@media (min-width: 425px) {
-  .categories {
-    font-size: 1.4rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .categories {
-    font-size: 2rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .categories {
-    font-size: 2.2rem;
-  }
-}
-
 .face-emoji-table {
   display: flex;
   flex-wrap: wrap;
@@ -263,8 +230,8 @@
 
 .box {
   background-color: white;
-  height: 60px;
-  width: 60px;
+  height: 30px;
+  width: 30px;
   display: inline-block;
   flex-wrap: wrap;
   margin: 0.2rem;
@@ -273,10 +240,21 @@
 }
 
 p.emoji {
-  font-size: 2rem;
+  font-size: 0.8rem;
   justify-content: center;
   align-items: center;
   text-align: center;
   margin-top: 0.3rem;
   animation: fadein 2s forwards;
+}
+
+@media (min-width: 768px) {
+  p.emoji {
+    font-size: 2rem;
+  }
+
+  .box {
+    height: 60px;
+    width: 60px;
+  }
 }
