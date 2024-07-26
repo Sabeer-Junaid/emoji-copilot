@@ -263,3 +263,33 @@ p.emoji {
   }
 }
 
+/* Copy Alert */
+
+#copy-alert {
+  background-color: var(--purple);
+  height: 2.5rem;
+  width: 8rem;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 1rem;
+  margin-left: 8rem;
+  z-index: 10000;
+  margin-top: 14rem;
+  display: none;
+}
+
+#copy-alert p {
+  font-family: "Press Start 2P", sans-serif;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: var(--yellow);
+  font-size: 1rem;
+  margin-top: 0.6rem;
+}
+
+#copy-alert.show {
+  opacity: 1; /* show with fade effect */
+}
