@@ -293,3 +293,17 @@ p.emoji {
 #copy-alert.show {
   opacity: 1; /* show with fade effect */
 }
+
+@media (min-width: 425px) {
+  #copy-alert {
+    margin-left: 10rem;
+    margin-top: 13rem;
+  }
+}
+
+@media (min-width: 768px) {
+  #copy-alert {
+    margin-left: 1rem;
+    margin-top: 10rem;
+  }
+}
