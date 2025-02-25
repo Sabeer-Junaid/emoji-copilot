@@ -1,3409 +1,1542 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-
-    <!-- Link CSS -->
-    <link rel="stylesheet" href="assets/styles.css" />
-
-    <title>⚡︎Emoji Copilot⚡︎</title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
-    <!-- Font Awesome icons -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    />
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Emoji Copilot</title>
   </head>
+  <body class="bg-gray-100 p-6 relative">
 
-  <body>
-    <!-- Nav -->
-    <div class="navbar container">
-      <div class="menu">
-        <img src="assets/images/favicon.png" class="nav-logo" />
+    <div class="flex justify-center">
+    <nav class="bg-white shadow-lg rounded-2xl px-6 py-3 w-full max-w-md">
+      <div class="flex justify-center items-center">
+          <button class="md:hidden p-2" onclick="toggleMenu()">
+              <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+          </button>
       </div>
-      <div class="menu">
-        <h2 class="nav-text">Emoji Copilot</h2>
+      <div id="menu" class="hidden md:flex md:justify-center md:gap-6 md:items-center">
+          <a href="#" class="block py-2 px-4 text-gray-700 hover:text-blue-500">Home</a>
+          <a href="#" class="block py-2 px-4 text-gray-700 hover:text-blue-500">About</a>
+          <a href="#" class="block py-2 px-4 text-gray-700 hover:text-blue-500">Services</a>
+          <a href="#" class="block py-2 px-4 text-gray-700 hover:text-blue-500">Contact</a>
       </div>
-      <div class="menu"></div>
-    </div>
+  </nav>
+</div>
+    <!-- Full-width Emoji Grid -->
 
-    <!-- Update Logs, Request New Emoji, Report a Bug -->
-    <div class="container">
-      <div class="update-logs menu">
-        <a href="https://github.com/Sabeer-Junaid/emoji-copilot/releases"
-          ><img src="assets/images/updates-logs.png" class="update-img"
-        /></a>
-      </div>
-      <div class="request-emoji menu">
-        <a href="https://github.com/Sabeer-Junaid/emoji-copilot/issues"
-          ><img src="assets/images/request-emoji.png" class="request-img"
-        /></a>
-      </div>
-      <div class="report-bug menu">
-        <a href="https://github.com/Sabeer-Junaid/emoji-copilot/issues"
-          ><img src="assets/images/report-issue.png" class="report-img"
-        /></a>
-      </div>
-    </div>
+    <!-- Smiley -->
+    <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center mt-4">
+      <h2 class="text-xl font-bold mb-4">Original Simileys</h2>
 
-    <div class="container">
-      <p class="description">
-        Experience the quickest & easiest way to copy & paste over 300 emojis
-        online. Improve your messages, posts, profile, and more for FREE.
-      </p>
-    </div>
-
-    <div id="copy-alert">
-      <p>Copied</p>
-    </div>
-
-    <div class="face-emoji-table container">
-      <div class="box">
-        <p class="emoji">😀</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😃</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😄</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😁</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😆</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😅</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤣</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😂</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙂</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙃</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🫠</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😉</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😊</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😇</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🥰</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😍</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤩</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😘</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😗</p>
-      </div>
-      <div class="box">
-        <p class="emoji">☺️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😚</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😙</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🥲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😋</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😛</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😜</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤪</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😝</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤑</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤗</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤭</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🫢</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🫣</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤫</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤔</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🫡</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤐</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😐</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😑</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😶</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🫥</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😶‍🌫️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😏</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😒</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙄</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😬</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😮‍💨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤥</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😌</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😔</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😪</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤤</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😴</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😷</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤒</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤕</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤢</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤮</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🥵</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🥶</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🥴</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😵</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😵‍💫</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤯</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤠</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🥳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🥸</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😎</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤓</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧐</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😕</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🫤</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😟</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙁</p>
-      </div>
-      <div class="box">
-        <p class="emoji">☹️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😮</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😯</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🥺</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🥹</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😰</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😥</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😢</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😭</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😱</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😖</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😣</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😞</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😓</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😩</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😫</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🥱</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😤</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😡</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😠</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤬</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😈</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👿</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💀</p>
-      </div>
-      <div class="box">
-        <p class="emoji">☠️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💩</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤡</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👹</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👺</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👻</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👽</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👾</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤖</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😺</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😸</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😹</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😻</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😽</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙀</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😿</p>
-      </div>
-      <div class="box">
-        <p class="emoji">😾</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙈</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙉</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙊</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💋</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💌</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💘</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💝</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💖</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💗</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💓</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💞</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💕</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💟</p>
-      </div>
-      <div class="box">
-        <p class="emoji">❣️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💔</p>
-      </div>
-      <div class="box">
-        <p class="emoji">❤️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧡</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💛</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💚</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💙</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💜</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤎</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🖤</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤍</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💯</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💢</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💥</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💫</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🕳️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💣</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💬</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👁️‍🗨️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🗨️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🗯️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💭</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💤</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👋</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤚</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🖐️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">✋</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🖖</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👌</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤌</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤏</p>
-      </div>
-      <div class="box">
-        <p class="emoji">✌️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤞</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤟</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤘</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤙</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👈</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👉</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👆</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🖕</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👇</p>
-      </div>
-      <div class="box">
-        <p class="emoji">☝️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👍</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👎</p>
-      </div>
-      <div class="box">
-        <p class="emoji">✊</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👊</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤛</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤜</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👏</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙌</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👐</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤝</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙏</p>
-      </div>
-      <div class="box">
-        <p class="emoji">✍️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💅</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💪</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🦾</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🦿</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🦵</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🦶</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👂</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🦻</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👃</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧠</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🦷</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🦴</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👀</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👁️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👅</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👄</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🩸</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👶</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧒</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧑</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👱</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧔</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧔‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧔‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍🦰</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍🦱</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍🦳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍🦲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍🦰</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧑‍🦰</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍🦱</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧑‍🦱</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍🦳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧑‍🦳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍🦲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧑‍🦲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👱‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👱‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧓</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👴</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👵</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙍</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙍‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙍‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙎</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙎‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙎‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙅</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙅‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙅‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙆</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙆‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙆‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💁</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💁‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💁‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙋</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙋‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙋‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧏</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧏‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧏‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙇</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙇‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🙇‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤦‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤦‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤷</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤷‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤷‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧑‍⚕️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍⚕️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍⚕️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧑‍🎓</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍🎓</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍🎓</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧑‍🏫</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍🏫</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍🏫</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧑‍⚖️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍⚖️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍⚖️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧑‍🌾</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍🌾</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧑‍🍳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍🍳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍🍳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧑‍🔧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍🔧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍🔧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧑‍🏭</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍🏭</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍🏭</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧑‍💼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍💼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍💼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧑‍🔬</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍🔬</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍🔬</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧑‍💻</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍💻</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍💻</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧑‍🎤</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍🎤</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍🎤</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧑‍🎨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍🎨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍🎨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧑‍✈️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍✈️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍✈️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧑‍🚀</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍🚀</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍🚀</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧑‍🚒</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍🚒</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍🚒</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👮</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👮‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👮‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🕵️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🕵️‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🕵️‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💂</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💂‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💂‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👷</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👷‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👷‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤴</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👸</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👳‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👳‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧕</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤵</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤵‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤵‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👰</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👰‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👰‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤰</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤱</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍🍼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧑‍🍼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍🍼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🎅</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🤶</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧑‍🎄</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🦸</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🦸‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🦸‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🦹</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🦹‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🦹‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧙</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧙‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧙‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧚</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧚‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧚‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧛</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧛‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧛‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧜</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧜‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧜‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧝</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧝‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧝‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧞</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧞‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧞‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧟</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧟‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧟‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧌</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💆</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💆‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💆‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💇</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💇‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💇‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧖</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧖‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧖‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🚶</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🚶‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🚶‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧍</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧍‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧍‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧎</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧎‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧎‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🦯</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🦼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🦽</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🏃</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🏃‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🏃‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💃</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🕺</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🕴️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👯</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👯‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👯‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧖</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧖‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧖‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧘</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧘‍♂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧘‍♀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🛀</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🛌</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧑‍🤝‍🧑</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👭</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👫</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👬</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💏</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍❤️‍💋‍👨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍❤️‍💋‍👨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍❤️‍💋‍👩</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💑</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍❤️‍👨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍❤️‍👨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍❤️‍👩</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👪</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍👩‍👦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍👩‍👧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍👩‍👧‍👦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍👩‍👦‍👦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍👩‍👧‍👧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍👨‍👦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍👨‍👧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍👨‍👧‍👦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍👨‍👦‍👦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍👨‍👧‍👧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍👩‍👦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍👩‍👧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍👩‍👧‍👦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍👩‍👦‍👦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍👩‍👧‍👧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍👦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍👦‍👦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍👧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍👧‍👦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👨‍👧‍👧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍👦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍👦‍👦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍👧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍👧‍👦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👩‍👧‍👧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧸</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🎈</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🎉</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🎊</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🎎</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🏮</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🎏</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🎐</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🎀</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🎁</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📩</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">✉️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📤</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📥</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📫</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📪</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📬</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📭</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📮</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🗳️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🖋️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">✒️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🖌️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🖍️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📝</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📁</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📂</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🗂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📅</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📆</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🗒️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🗓️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📇</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📈</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📉</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📊</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📋</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📌</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📍</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📎</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🖇️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📏</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📐</p>
-      </div>
-      <div class="box">
-        <p class="emoji">✂️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🗃️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🗄️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🗑️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔒</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔓</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔏</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔐</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔑</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🗝️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪓</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⛏️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⚒️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🛠️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🗡️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⚔️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔫</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪃</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🏹</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🛡️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪚</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪛</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔩</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⚙️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🗜️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⚖️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🦯</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔗</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⛓️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪝</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧰</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪜</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💣</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪞</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪟</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🛏️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🛋️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪑</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🚽</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🚿</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🛁</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪠</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪤</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪒</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧴</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧷</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧹</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧺</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧻</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪣</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🫧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪥</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪒</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧽</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧯</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🛒</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🚬</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⚰️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⚱️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🗿</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🚩</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🏴</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🏳️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🏳️‍🌈</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🏳️‍⚧️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🏴‍☠️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⚔️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🛡️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧤</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧣</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🎒</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🎓</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧢</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👑</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💍</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🩴</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👚</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👕</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👖</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🩲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🩳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👗</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👔</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧥</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🩱</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🥿</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👠</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👡</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🩰</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👢</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👞</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👟</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🥾</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🦯</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧵</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧶</p>
-      </div>
-      <div class="box">
-        <p class="emoji">👓</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🕶️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🥽</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🥼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🌂</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🦽</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🦼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🛷</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🛹</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🛼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪃</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🛶</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⚓</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪝</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🛳️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⛴️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🛥️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🚤</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🛩️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🛫</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🛬</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪂</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪰</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪱</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🦠</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪴</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🌍</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🌎</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🌏</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🪐</p>
-      </div>
-      <div class="box">
-        <p class="emoji">☄️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🌟</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🌠</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🌌</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⛅</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🌤️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🌥️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🌦️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🌧️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⛈️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🌩️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🌨️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">❄️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">☃️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⛄</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🌬️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🧊</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🛑</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⚠️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">☢️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">☣️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⬆️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">↗️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">➡️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">↘️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⬇️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">↙️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⬅️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">↖️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">↕️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">↔️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">↩️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">↪️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⤴️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⤵️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔃</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔄</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔙</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔚</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔛</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔜</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔝</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🛐</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⚛️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🕉️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">✡️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">☸️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">☯️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">✝️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">☦️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">☪️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">☮️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🕎</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔯</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♈</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♉</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♊</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♋</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♌</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♍</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♎</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♏</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♐</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♑</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♒</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♓</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⛎</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔀</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔁</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔂</p>
-      </div>
-      <div class="box">
-        <p class="emoji">▶️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⏩</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⏭️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⏯️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">◀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⏪</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⏮️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⏫</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔽</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⏬</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⏸️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⏹️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⏺️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⏏️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🎦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔅</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔆</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📶</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📴</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔱</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📛</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔰</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⭕</p>
-      </div>
-      <div class="box">
-        <p class="emoji">✅</p>
-      </div>
-      <div class="box">
-        <p class="emoji">☑️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">✔️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">❌</p>
-      </div>
-      <div class="box">
-        <p class="emoji">❎</p>
-      </div>
-      <div class="box">
-        <p class="emoji">➕</p>
-      </div>
-      <div class="box">
-        <p class="emoji">➖</p>
-      </div>
-      <div class="box">
-        <p class="emoji">➗</p>
-      </div>
-      <div class="box">
-        <p class="emoji">➰</p>
-      </div>
-      <div class="box">
-        <p class="emoji">➿</p>
-      </div>
-      <div class="box">
-        <p class="emoji">〽️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">✳️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">✴️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">❇️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">‼️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⁉️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">❓</p>
-      </div>
-      <div class="box">
-        <p class="emoji">❔</p>
-      </div>
-      <div class="box">
-        <p class="emoji">❕</p>
-      </div>
-      <div class="box">
-        <p class="emoji">❗</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔵</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🟠</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🟡</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🟢</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔴</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🟣</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🟤</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⚫</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⚪</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🟥</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🟧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🟨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🟩</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🟦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🟪</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🟫</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⬛</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⬜</p>
-      </div>
-      <div class="box">
-        <p class="emoji">◼️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">◻️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">◾</p>
-      </div>
-      <div class="box">
-        <p class="emoji">◽</p>
-      </div>
-      <div class="box">
-        <p class="emoji">▪️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">▫️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔶</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔷</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔸</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔹</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔺</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔻</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💠</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⚜️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔇</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔈</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔉</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔊</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📢</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📣</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📯</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔔</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔕</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🎵</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🎶</p>
-      </div>
-      <div class="box">
-        <p class="emoji">💹</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🏧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🚮</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🚰</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♿</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🚹</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🚺</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🚻</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🚼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🚾</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⚠️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🚸</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⛔</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🚫</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🚳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🚭</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🚯</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🚱</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🚷</p>
-      </div>
-      <div class="box">
-        <p class="emoji">📵</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔞</p>
-      </div>
-      <div class="box">
-        <p class="emoji">☢️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">☣️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⬆️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">↗️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">➡️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">↘️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⬇️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">↙️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⬅️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">↖️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">↕️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">↔️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">↩️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">↪️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⤴️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⤵️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔃</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔄</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔙</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔚</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔛</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔜</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔝</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🛐</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⚛️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🕉️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">✡️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">☸️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">☯️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">✝️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">☦️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">☪️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">☮️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🕎</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔯</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♈</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♉</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♊</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♋</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♌</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♍</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♎</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♏</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♐</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♑</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♒</p>
-      </div>
-      <div class="box">
-        <p class="emoji">♓</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⛎</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔀</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔁</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔂</p>
-      </div>
-      <div class="box">
-        <p class="emoji">▶️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⏩</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⏭️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⏯️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">◀️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⏪</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⏮️</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🔼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">⏫</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇦🇫</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇦🇱</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇦🇲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇦🇴</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇦🇶</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇦🇷</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇦🇸</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇦🇹</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇦🇺</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇦🇼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇦🇽</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇦🇿</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇧🇦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇧🇧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇧🇩</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇧🇪</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇧🇫</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇧🇬</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇧🇭</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇧🇮</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇧🇯</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇧🇱</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇧🇲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇧🇳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇧🇴</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇧🇷</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇧🇸</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇧🇹</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇧🇺</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇧🇻</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇧🇼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇧🇾</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇧🇿</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇨🇦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇨🇨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇨🇩</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇨🇫</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇨🇬</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇨🇭</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇨🇮</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇨🇰</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇨🇱</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇨🇲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇨🇳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇨🇴</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇨🇵</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇨🇷</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇨🇺</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇨🇻</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇨🇼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇨🇽</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇨🇾</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇨🇿</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇩🇪</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇩🇯</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇩🇲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇩🇴</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇩🇿</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇪🇦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇪🇨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇪🇪</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇪🇬</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇪🇭</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇪🇷</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇪🇸</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇪🇹</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇪🇺</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇫🇮</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇫🇯</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇫🇰</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇫🇲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇫🇴</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇫🇷</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇬🇦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇬🇧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇬🇩</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇬🇪</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇬🇫</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇬🇲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇬🇳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇬🇵</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇬🇶</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇬🇷</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇬🇹</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇬🇺</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇬🇼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇬🇾</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇭🇰</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇭🇲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇭🇳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇭🇷</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇭🇹</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇭🇺</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇮🇨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇮🇩</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇮🇪</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇮🇱</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇮🇲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇮🇳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇮🇴</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇮🇶</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇮🇷</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇮🇸</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇮🇹</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇯🇲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇯🇵</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇯🇴</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇰🇪</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇰🇬</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇰🇭</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇰🇲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇰🇳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇰🇵</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇰🇲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇰🇳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇰🇵</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇰🇷</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇰🇼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇰🇾</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇱🇦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇱🇧</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇱🇨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇱🇮</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇱🇰</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇱🇷</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇱🇸</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇱🇹</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇱🇺</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇲🇦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇲🇨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇲🇩</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇲🇪</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇲🇫</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇲🇬</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇲🇭</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇲🇰</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇲🇱</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇲🇲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇲🇳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇲🇵</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇲🇶</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇲🇷</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇲🇸</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇲🇹</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇲🇺</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇲🇻</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇲🇼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇲🇽</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇲🇾</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇲🇿</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇳🇦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇳🇨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇳🇪</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇳🇫</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇳🇬</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇳🇮</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇳🇱</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇳🇵</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇳🇷</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇳🇺</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇳🇿</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇴🇲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇵🇦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇵🇪</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇵🇫</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇵🇬</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇵🇭</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇵🇰</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇵🇱</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇵🇲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇵🇳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇵🇱</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇵🇲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇵🇳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇵🇷</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇵🇸</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇵🇹</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇵🇼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇵🇾</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇶🇦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇷🇪</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇷🇴</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇷🇸</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇷🇺</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇷🇼</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇼🇸</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇽🇰</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇾🇪</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇾🇹</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇺🇦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇺🇬</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇺🇲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇺🇳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇺🇸</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇺🇾</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇺🇿</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇻🇦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇻🇨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇻🇪</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇻🇬</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇻🇳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇻🇳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇼🇸</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇽🇰</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇾🇪</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇾🇹</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇺🇦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇺🇬</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇺🇲</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇺🇳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇺🇸</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇺🇾</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇺🇿</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇻🇦</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇻🇨</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇻🇪</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇻🇬</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇻🇳</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇼🇸</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇽🇰</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇾🇪</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇾🇹</p>
-      </div>
-      <div class="box">
-        <p class="emoji">🇺🇦</p>
+      <div
+        class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+      >
+        <span class="cursor-pointer" onclick="copyEmoji('😀')">&#128512;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😁')">&#128513;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😂')">&#128514;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😃')">&#128515;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😄')">&#128516;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😅')">&#128517;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😆')">&#128518;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😇')">&#128519;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😈')">&#128520;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😉')">&#128521;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😊')">&#128522;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😋')">&#128523;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😌')">&#128524;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😍')">&#128525;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😎')">&#128526;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😏')">&#128527;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😐')">&#128528;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😑')">&#128529;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😒')">&#128530;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😓')">&#128531;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😔')">&#128532;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😕')">&#128533;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😖')">&#128534;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😗')">&#128535;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😘')">&#128536;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😙')">&#128537;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😚')">&#128538;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😛')">&#128539;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😜')">&#128540;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😝')">&#128541;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😞')">&#128542;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😟')">&#128543;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😠')">&#128544;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😡')">&#128545;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😢')">&#128546;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😣')">&#128547;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😤')">&#128548;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😥')">&#128549;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😦')">&#128550;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😧')">&#128551;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😨')">&#128552;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😩')">&#128553;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😪')">&#128554;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😫')">&#128555;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😬')">&#128556;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😭')">&#128557;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😮')">&#128558;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😯')">&#128559;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😰')">&#128560;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😱')">&#128561;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😲')">&#128562;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😳')">&#128563;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😴')">&#128564;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😵')">&#128565;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😶')">&#128566;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😷')">&#128567;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🙁')">&#128577;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🙂')">&#128578;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🙃')">&#128579;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🙄')">&#128580;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤐')">&#129296;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤑')">&#129297;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤒')">&#129298;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤓')">&#129299;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤔')">&#129300;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤕')">&#129301;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤖')">&#129302;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤗')">&#129303;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤠')">&#129312;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤡')">&#129313;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤢')">&#129314;</span>
       </div>
     </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="assets/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Cat Faces -->
+    <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+      <h2 class="text-xl font-bold mb-4">Cat Faces</h2>
+
+      <div
+        class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+      >
+        <span class="cursor-pointer" onclick="copyEmoji('😸')">&#128568;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😹')">&#128569;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😺')">&#128570;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😻')">&#128571;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😼')">&#128572;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😽')">&#128573;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😾')">&#128574;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('😿')">&#128575;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🙀')">&#128576;</span>
+      </div>
+    </div>
+
+    <!-- Body Parts and Hand Gestures -->
+    <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+      <h2 class="text-xl font-bold mb-4">Body Parts and Hand Gestures</h2>
+
+      <div
+        class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+      >
+        <span class="cursor-pointer" onclick="copyEmoji('👋')">&#128075;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤚')">&#129306;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🖐')">&#128400;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('✋')">&#9995;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🖖')">&#128406;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👌')">&#128076;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤏')">&#129295;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('✌')">&#9996;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤞')">&#129310;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤟')">&#129311;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤘')">&#129304;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤙')">&#129305;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👈')">&#128072;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👉')">&#128073;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👆')">&#128070;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🖕')">&#128405;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👇')">&#128071;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('☝')">&#9757;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👍')">&#128077;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👎')">&#128078;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('✊')">&#9994;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👊')">&#128074;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤛')">&#129307;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤜')">&#129308;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👏')">&#128079;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🙌')">&#128588;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👐')">&#128080;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤲')">&#129332;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤝')">&#129309;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🙏')">&#128591;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('✍')">&#9997;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('💅')">&#128133;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤳')">&#129335;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('💪')">&#128170;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🦾')">&#129474;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🦵')">&#129465;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🦿')">&#129476;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🦶')">&#129466;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🦷')">&#129463;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🦴')">&#129462;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👂')">&#128066;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🦻')">&#129457;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👃')">&#128067;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🧠')">&#129504;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🫀')">&#129656;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🫁')">&#129657;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🦷')">&#129463;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👀')">&#128064;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👁')">&#128065;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👅')">&#128068;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👄')">&#128069;</span>
+      </div>
+    </div>
+
+    <!-- Person Roles -->
+    <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+      <h2 class="text-xl font-bold mb-4">Person Roles</h2>
+
+      <div
+        class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+      >
+        <span class="cursor-pointer" onclick="copyEmoji('👋')">&#128075;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👮')">&#128110;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👮‍♂️')"
+          >&#128110;&#8205;&#9794;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👮‍♀️')"
+          >&#128110;&#8205;&#9792;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('🕵️')">&#128373;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🕵️‍♂️')"
+          >&#128373;&#8205;&#9794;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('🕵️‍♀️')"
+          >&#128373;&#8205;&#9792;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('💂')">&#128130;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('💂‍♂️')"
+          >&#128130;&#8205;&#9794;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('💂‍♀️')"
+          >&#128130;&#8205;&#9792;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👷')">&#128119;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👷‍♂️')"
+          >&#128119;&#8205;&#9794;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👷‍♀️')"
+          >&#128119;&#8205;&#9792;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👳')">&#128115;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👳‍♂️')"
+          >&#128115;&#8205;&#9794;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👳‍♀️')"
+          >&#128115;&#8205;&#9792;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👱')">&#128113;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👱‍♂️')"
+          >&#128113;&#8205;&#9794;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👱‍♀️')"
+          >&#128113;&#8205;&#9792;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👸')">&#128120;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤴')">&#129332;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👰')">&#128112;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤵')">&#129333;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👼')">&#128124;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤰')">&#129328;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤱')">&#129329;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍⚕️')"
+          >&#128105;&#8205;&#9877;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍⚕️')"
+          >&#128104;&#8205;&#9877;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍🎓')"
+          >&#128105;&#8205;&#127891;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍🎓')"
+          >&#128104;&#8205;&#127891;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍🏫')"
+          >&#128105;&#8205;&#127979;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍🏫')"
+          >&#128104;&#8205;&#127979;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍⚖️')"
+          >&#128105;&#8205;&#9878;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍⚖️')"
+          >&#128104;&#8205;&#9878;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍🌾')"
+          >&#128105;&#8205;&#127806;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍🌾')"
+          >&#128104;&#8205;&#127806;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍🍳')"
+          >&#128105;&#8205;&#127859;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍🍳')"
+          >&#128104;&#8205;&#127859;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍🔧')"
+          >&#128105;&#8205;&#128295;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍🔧')"
+          >&#128104;&#8205;&#128295;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍🏭')"
+          >&#128105;&#8205;&#127981;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍🏭')"
+          >&#128104;&#8205;&#127981;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍💼')"
+          >&#128105;&#8205;&#128188;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍💼')"
+          >&#128104;&#8205;&#128188;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍🔬')"
+          >&#128105;&#8205;&#128300;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍🔬')"
+          >&#128104;&#8205;&#128300;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍🎨')"
+          >&#128105;&#8205;&#127912;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍🎨')"
+          >&#128104;&#8205;&#127912;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍🚀')"
+          >&#128105;&#8205;&#128640;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍🚀')"
+          >&#128104;&#8205;&#128640;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍🚒')"
+          >&#128105;&#8205;&#128658;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍🚒')"
+          >&#128104;&#8205;&#128658;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👮‍♂️')"
+          >&#128110;&#8205;&#9794;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👮‍♀️')"
+          >&#128110;&#8205;&#9792;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('🕵️‍♂️')"
+          >&#128373;&#8205;&#9794;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('🕵️‍♀️')"
+          >&#128373;&#8205;&#9792;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('💂‍♂️')"
+          >&#128130;&#8205;&#9794;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('💂‍♀️')"
+          >&#128130;&#8205;&#9792;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👷‍♂️')"
+          >&#128119;&#8205;&#9794;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👷‍♀️')"
+          >&#128119;&#8205;&#9792;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👳‍♂️')"
+          >&#128115;&#8205;&#9794;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👳‍♀️')"
+          >&#128115;&#8205;&#9792;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👱‍♂️')"
+          >&#128113;&#8205;&#9794;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👱‍♀️')"
+          >&#128113;&#8205;&#9792;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👸')">&#128120;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤴')">&#129332;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👰')">&#128112;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤵')">&#129333;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👼')">&#128124;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤰')">&#129328;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤱')">&#129329;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍⚕️')"
+          >&#128105;&#8205;&#9877;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍⚕️')"
+          >&#128104;&#8205;&#9877;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍🎓')"
+          >&#128105;&#8205;&#127891;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍🎓')"
+          >&#128104;&#8205;&#127891;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍🏫')"
+          >&#128105;&#8205;&#127979;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍🏫')"
+          >&#128104;&#8205;&#127979;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍⚖️')"
+          >&#128105;&#8205;&#9878;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍⚖️')"
+          >&#128104;&#8205;&#9878;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍🌾')"
+          >&#128105;&#8205;&#127806;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍🌾')"
+          >&#128104;&#8205;&#127806;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍🍳')"
+          >&#128105;&#8205;&#127859;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍🍳')"
+          >&#128104;&#8205;&#127859;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍🔧')"
+          >&#128105;&#8205;&#128295;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍🔧')"
+          >&#128104;&#8205;&#128295;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍🏭')"
+          >&#128105;&#8205;&#127981;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍🏭')"
+          >&#128104;&#8205;&#127981;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍💼')"
+          >&#128105;&#8205;&#128188;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍💼')"
+          >&#128104;&#8205;&#128188;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍🔬')"
+          >&#128105;&#8205;&#128300;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍🔬')"
+          >&#128104;&#8205;&#128300;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍🎨')"
+          >&#128105;&#8205;&#127912;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍🎨')"
+          >&#128104;&#8205;&#127912;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍🚀')"
+          >&#128105;&#8205;&#128640;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍🚀')"
+          >&#128104;&#8205;&#128640;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍🚒')"
+          >&#128105;&#8205;&#128658;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍🚒')"
+          >&#128104;&#8205;&#128658;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩')">&#128105;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👨')">&#128104;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🧑')">&#129489;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👧')">&#128103;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👦')">&#128102;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🧒')">&#129490;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👶')">&#128118;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👵')">&#128117;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👴')">&#128116;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🧓')">&#129491;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👲')">&#128114;</span>
+      </div>
+    </div>
+
+    <!-- Family -->
+    <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+      <h2 class="text-xl font-bold mb-4">Family</h2>
+
+      <div
+        class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+      >
+        <span class="cursor-pointer" onclick="copyEmoji('👪')">&#128106;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍👩‍👦')"
+          >&#128104;&#8205;&#128105;&#8205;&#128102;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍👩‍👧')"
+          >&#128104;&#8205;&#128105;&#8205;&#128103;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍👩‍👧‍👦')"
+          >&#128104;&#8205;&#128105;&#8205;&#128103;&#8205;&#128102;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍👩‍👦‍👦')"
+          >&#128104;&#8205;&#128105;&#8205;&#128102;&#8205;&#128102;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍👩‍👧‍👧')"
+          >&#128104;&#8205;&#128105;&#8205;&#128103;&#8205;&#128103;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍👨‍👦')"
+          >&#128104;&#8205;&#128104;&#8205;&#128102;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍👨‍👧')"
+          >&#128104;&#8205;&#128104;&#8205;&#128103;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍👨‍👧‍👦')"
+          >&#128104;&#8205;&#128104;&#8205;&#128103;&#8205;&#128102;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍👨‍👦‍👦')"
+          >&#128104;&#8205;&#128104;&#8205;&#128102;&#8205;&#128102;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍👨‍👧‍👧')"
+          >&#128104;&#8205;&#128104;&#8205;&#128103;&#8205;&#128103;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍👩‍👦')"
+          >&#128105;&#8205;&#128105;&#8205;&#128102;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍👩‍👧')"
+          >&#128105;&#8205;&#128105;&#8205;&#128103;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍👩‍👧‍👦')"
+          >&#128105;&#8205;&#128105;&#8205;&#128103;&#8205;&#128102;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍👩‍👦‍👦')"
+          >&#128105;&#8205;&#128105;&#8205;&#128102;&#8205;&#128102;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍👩‍👧‍👧')"
+          >&#128105;&#8205;&#128105;&#8205;&#128103;&#8205;&#128103;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍👦')"
+          >&#128104;&#8205;&#128102;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍👧')"
+          >&#128104;&#8205;&#128103;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍👧‍👦')"
+          >&#128104;&#8205;&#128103;&#8205;&#128102;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍👦‍👦')"
+          >&#128104;&#8205;&#128102;&#8205;&#128102;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👨‍👧‍👧')"
+          >&#128104;&#8205;&#128103;&#8205;&#128103;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍👦')"
+          >&#128105;&#8205;&#128102;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍👧')"
+          >&#128105;&#8205;&#128103;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍👧‍👦')"
+          >&#128105;&#8205;&#128103;&#8205;&#128102;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍👦‍👦')"
+          >&#128105;&#8205;&#128102;&#8205;&#128102;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('👩‍👧‍👧')"
+          >&#128105;&#8205;&#128103;&#8205;&#128103;</span
+        >
+      </div>
+    </div>
+
+    <!-- Heart -->
+    <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+      <h2 class="text-xl font-bold mb-4">Heart</h2>
+
+      <div
+        class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+      >
+        <span class="cursor-pointer" onclick="copyEmoji('❤️')"
+          >&#10084;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('🧡')">&#129505;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('💛')">&#128155;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('💚')">&#128154;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('💙')">&#128153;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('💜')">&#128156;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🖤')">&#128420;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤍')">&#129293;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('🤎')">&#129294;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('💔')">&#128148;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('❣️')"
+          >&#10083;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('💕')">&#128149;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('💞')">&#128158;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('💓')">&#128147;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('💗')">&#128151;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('💖')">&#128150;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('💘')">&#128152;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('💝')">&#128157;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('💟')">&#128159;</span>
+        <span class="cursor-pointer" onclick="copyEmoji('♥️')"
+          >&#9829;&#65039;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('❤️‍🔥')"
+          >&#10084;&#65039;&#8205;&#128293;</span
+        >
+        <span class="cursor-pointer" onclick="copyEmoji('❤️‍🩹')"
+          >&#10084;&#65039;&#8205;&#129657;</span
+        >
+      </div>
+    </div>
+
+    <!-- Hair Style -->
+    <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+      <h2 class="text-xl font-bold mb-4">Hair Style</h2>
+
+      <div
+        class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+      >
+      <span class="cursor-pointer" onclick="copyEmoji('👩')">&#128105;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('👨')">&#128104;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧑')">&#129489;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('👧')">&#128103;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('👦')">&#128102;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧒')">&#129490;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('👩‍🦰')">&#128105;&#8205;&#129456;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('👨‍🦰')">&#128104;&#8205;&#129456;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧑‍🦰')">&#129489;&#8205;&#129456;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('👩‍🦱')">&#128105;&#8205;&#129457;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('👨‍🦱')">&#128104;&#8205;&#129457;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧑‍🦱')">&#129489;&#8205;&#129457;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('👩‍🦳')">&#128105;&#8205;&#129458;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('👨‍🦳')">&#128104;&#8205;&#129458;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧑‍🦳')">&#129489;&#8205;&#129458;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('👩‍🦲')">&#128105;&#8205;&#129459;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('👨‍🦲')">&#128104;&#8205;&#129459;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧑‍🦲')">&#129489;&#8205;&#129459;</span>
+      </div>
+    </div>
+
+    <!-- Speak Bubbles -->
+    <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+      <h2 class="text-xl font-bold mb-4">Speak Bubbles</h2>
+
+      <div
+        class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+      >
+      <span class="cursor-pointer" onclick="copyEmoji('💬')">&#128172;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🗨️')">&#128488;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🗯️')">&#128495;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('💭')">&#128173;</span>
+      </div>
+    </div>
+
+    <!-- Fantasy Person -->
+    <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+      <h2 class="text-xl font-bold mb-4">Fantasy Person</h2>
+
+      <div
+        class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+      >
+      <span class="cursor-pointer" onclick="copyEmoji('🧙')">&#129497;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧙‍♂️')">&#129497;&#8205;&#9794;&#65039;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧙‍♀️')">&#129497;&#8205;&#9792;&#65039;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧚')">&#129498;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧚‍♂️')">&#129498;&#8205;&#9794;&#65039;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧚‍♀️')">&#129498;&#8205;&#9792;&#65039;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧛')">&#129499;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧛‍♂️')">&#129499;&#8205;&#9794;&#65039;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧛‍♀️')">&#129499;&#8205;&#9792;&#65039;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧜')">&#129500;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧜‍♂️')">&#129500;&#8205;&#9794;&#65039;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧜‍♀️')">&#129500;&#8205;&#9792;&#65039;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧝')">&#129501;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧝‍♂️')">&#129501;&#8205;&#9794;&#65039;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧝‍♀️')">&#129501;&#8205;&#9792;&#65039;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧞')">&#129502;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧞‍♂️')">&#129502;&#8205;&#9794;&#65039;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧞‍♀️')">&#129502;&#8205;&#9792;&#65039;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧟')">&#129503;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧟‍♂️')">&#129503;&#8205;&#9794;&#65039;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🧟‍♀️')">&#129503;&#8205;&#9792;&#65039;</span>
+      </div>
+    </div>
+
+    <!-- Clock Faces -->
+    <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+      <h2 class="text-xl font-bold mb-4">Clock Faces</h2>
+
+      <div
+        class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+      >
+        <span class="cursor-pointer" onclick="copyEmoji('🕐')">&#128336;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕑')">&#128337;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕒')">&#128338;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕓')">&#128339;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕔')">&#128340;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕕')">&#128341;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕖')">&#128342;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕗')">&#128343;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕘')">&#128344;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕙')">&#128345;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕚')">&#128346;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕛')">&#128347;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕜')">&#128348;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕝')">&#128349;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕞')">&#128350;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕟')">&#128351;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕠')">&#128352;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕡')">&#128353;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕢')">&#128354;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕣')">&#128355;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕤')">&#128356;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕥')">&#128357;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕦')">&#128358;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕧')">&#128359;</span>
+      </div>
+    </div>
+
+    <!-- Post  -->
+    <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+      <h2 class="text-xl font-bold mb-4">Post Emojis</h2>
+
+      <div
+        class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+      >
+      <span class="cursor-pointer" onclick="copyEmoji('✉️')">&#9993;&#65039;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📧')">&#128231;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📨')">&#128232;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📩')">&#128233;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📤')">&#128228;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📥')">&#128229;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📦')">&#128230;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📫')">&#128235;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📪')">&#128234;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📬')">&#128236;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📭')">&#128237;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📮')">&#128238;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📯')">&#128239;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📜')">&#128220;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📃')">&#128195;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📑')">&#128209;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📋')">&#128203;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📁')">&#128193;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📂')">&#128194;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🗂️')">&#128450;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📄')">&#128196;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📅')">&#128197;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📆')">&#128198;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🗓️')">&#128467;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📇')">&#128199;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📈')">&#128200;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📉')">&#128201;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📊')">&#128202;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📋')">&#128203;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📌')">&#128204;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📍')">&#128205;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📎')">&#128206;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🖇️')">&#128462;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📏')">&#128207;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📐')">&#128208;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('✂️')">&#9986;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🗃️')">&#128451;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🗄️')">&#128452;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('🗑️')">&#128465;</span>
+      </div>
+    </div>
+
+    <!-- Phone Emojis -->
+    <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+      <h2 class="text-xl font-bold mb-4">Phone Emojis</h2>
+
+      <div
+        class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+      >
+      <span class="cursor-pointer" onclick="copyEmoji('☎️')">&#9742;&#65039;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📞')">&#128222;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📱')">&#128241;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📲')">&#128242;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📳')">&#128243;</span>
+      <span class="cursor-pointer" onclick="copyEmoji('📴')">&#128244;</span>
+      </div>
+    </div>
+
+    <!-- Places -->
+    <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+          <h2 class="text-xl font-bold mb-4">Places</h2>
+    
+          <div
+            class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+          >
+          <span class="cursor-pointer" onclick="copyEmoji('🏖️')">&#127958;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏝️')">&#127965;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏜️')">&#127964;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏞️')">&#127966;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏟️')">&#127967;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏛️')">&#127984;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏗️')">&#127959;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏘️')">&#127968;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏙️')">&#127961;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏚️')">&#127962;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('⛲')">&#9970;</span>
+<span class="cursor-pointer" onclick="copyEmoji('⛺')">&#9978;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌋')">&#127755;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🗻')">&#128507;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏕️')">&#127957;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏖️')">&#127958;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏜️')">&#127964;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏝️')">&#127965;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏞️')">&#127966;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏟️')">&#127967;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏘️')">&#127968;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏙️')">&#127961;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏚️')">&#127962;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏛️')">&#127984;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏗️')">&#127959;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏜️')">&#127964;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏖️')">&#127958;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏝️')">&#127965;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏞️')">&#127966;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏟️')">&#127967;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏕️')">&#127957;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏖️')">&#127958;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏝️')">&#127965;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏞️')">&#127966;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏟️')">&#127967;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏛️')">&#127984;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏗️')">&#127959;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏘️')">&#127968;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏙️')">&#127961;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏚️')">&#127962;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏖️')">&#127958;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏝️')">&#127965;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏞️')">&#127966;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏟️')">&#127967;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏛️')">&#127984;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏗️')">&#127959;&#65039;</span>
+          </div>
+    </div>
+
+    <!-- Building -->
+    <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+      <h2 class="text-xl font-bold mb-4">Building</h2>
+
+      <div
+        class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+      >
+      <span class="cursor-pointer" onclick="copyEmoji('🏠')">&#127968;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏡')">&#127969;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏢')">&#127970;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏣')">&#127971;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏤')">&#127972;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏥')">&#127973;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏦')">&#127974;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏨')">&#127976;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏩')">&#127977;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏪')">&#127978;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏫')">&#127979;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏬')">&#127980;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏭')">&#127981;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏯')">&#127983;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏰')">&#127984;</span>
+<span class="cursor-pointer" onclick="copyEmoji('💒')">&#128146;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏛️')">&#127984;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏗️')">&#127959;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏘️')">&#127968;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏙️')">&#127961;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏚️')">&#127962;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏢')">&#127970;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏬')">&#127980;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏭')">&#127981;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏯')">&#127983;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏰')">&#127984;</span>
+<span class="cursor-pointer" onclick="copyEmoji('💒')">&#128146;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏛️')">&#127984;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏗️')">&#127959;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏘️')">&#127968;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏙️')">&#127961;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏚️')">&#127962;&#65039;</span>
+```
+      </div>
+    </div>
+
+    <!-- Vehciles -->
+    <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+      <h2 class="text-xl font-bold mb-4">Vehciles</h2>
+
+      <div
+        class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+      >
+      <span class="cursor-pointer" onclick="copyEmoji('🚗')">&#128663;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚕')">&#128665;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚙')">&#128661;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚌')">&#128652;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚎')">&#128654;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏎️')">&#127950;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚓')">&#128659;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚑')">&#128657;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚒')">&#128658;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚐')">&#128656;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚚')">&#128666;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚛')">&#128667;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚜')">&#128668;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🛴')">&#128756;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚲')">&#128690;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🛵')">&#128757;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏍️')">&#127949;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚨')">&#128680;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚔')">&#128660;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚍')">&#128653;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚘')">&#128664;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚖')">&#128662;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚡')">&#128673;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚠')">&#128674;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚟')">&#128675;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚃')">&#128643;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚋')">&#128651;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚞')">&#128670;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚝')">&#128669;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚄')">&#128644;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚅')">&#128645;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚈')">&#128648;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚂')">&#128642;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚆')">&#128646;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚇')">&#128647;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚊')">&#128650;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚉')">&#128649;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚁')">&#128641;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🛩️')">&#9992;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('✈️')">&#9992;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🛫')">&#128747;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🛬')">&#128748;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🪂')">&#129666;</span>
+<span class="cursor-pointer" onclick="copyEmoji('💺')">&#128186;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚀')">&#128640;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🛸')">&#129680;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚁')">&#128641;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🛶')">&#128758;</span>
+<span class="cursor-pointer" onclick="copyEmoji('⛵')">&#9973;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚤')">&#128676;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🛥️')">&#128741;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🛳️')">&#128743;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚢')">&#128674;</span>
+      </div>
+    </div>
+
+    <!-- Traffic Emojis -->
+    <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+      <h2 class="text-xl font-bold mb-4">Traffic Signs Emojis</h2>
+
+      <div
+        class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+      >
+      <span class="cursor-pointer" onclick="copyEmoji('🚧')">&#128679;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚦')">&#128678;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚥')">&#128677;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚏')">&#128655;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🛑')">&#128721;</span>
+<span class="cursor-pointer" onclick="copyEmoji('⚠️')">&#9888;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚸')">&#128696;</span>
+<span class="cursor-pointer" onclick="copyEmoji('⛔')">&#9940;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🚫')">&#128683;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🛂')">&#128706;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🛃')">&#128707;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🛄')">&#128708;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🛅')">&#128709;</span>
+      </div>
+    </div>
+
+        <!-- Animal Signs -->
+        <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+          <h2 class="text-xl font-bold mb-4">Animal Emojis</h2>
+          <div
+            class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+          >
+          <span class="cursor-pointer" onclick="copyEmoji('🐶')">&#128054;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐱')">&#128049;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐭')">&#128045;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐹')">&#128057;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐰')">&#128048;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦊')">&#129418;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐻')">&#128059;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐼')">&#128060;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐨')">&#128040;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐯')">&#128047;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦁')">&#129409;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐮')">&#128046;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐷')">&#128055;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐽')">&#128061;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐸')">&#128056;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐵')">&#128053;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐔')">&#128020;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐧')">&#128039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐦')">&#128038;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐤')">&#128037;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐣')">&#128036;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐥')">&#128035;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦆')">&#129414;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦅')">&#129413;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦉')">&#129417;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦇')">&#129415;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐺')">&#128058;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐗')">&#128023;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐴')">&#128052;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦄')">&#129412;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐝')">&#128029;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐛')">&#128027;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦋')">&#129419;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐌')">&#128012;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐞')">&#128030;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐜')">&#128028;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦗')">&#129410;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕷️')">&#128375;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕸️')">&#128376;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐢')">&#128034;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐍')">&#128013;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦎')">&#129422;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦂')">&#129410;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦀')">&#129408;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐙')">&#128025;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦑')">&#129425;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐡')">&#128032;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐠')">&#128031;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐟')">&#128033;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐬')">&#128044;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐳')">&#128051;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐋')">&#128011;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦈')">&#129416;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐊')">&#128010;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐅')">&#128005;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐆')">&#128006;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦓')">&#129427;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦍')">&#129421;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦧')">&#129447;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦣')">&#129443;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐘')">&#128024;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦛')">&#129435;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦏')">&#129433;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐪')">&#128042;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐫')">&#128043;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦙')">&#129433;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦒')">&#129419;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦘')">&#129432;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦬')">&#129424;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐃')">&#128003;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐂')">&#128002;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐄')">&#128004;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐎')">&#128014;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐖')">&#128022;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐏')">&#128015;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐑')">&#128017;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐐')">&#128016;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦌')">&#129420;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐕')">&#128021;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐩')">&#128041;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦮')">&#129455;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐈')">&#128008;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🐓')">&#128019;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦃')">&#129411;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦤')">&#129442;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🪶')">&#129455;</span>
+          </div>
+        </div>
+
+        <!-- Drink Emojis -->
+        <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+          <h2 class="text-xl font-bold mb-4">Drink Emojis</h2>
+    
+          <div
+            class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+          >
+          <span class="cursor-pointer" onclick="copyEmoji('🍵')">&#127861;</span>
+<span class="cursor-pointer" onclick="copyEmoji('☕')">&#9749;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍶')">&#127862;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍺')">&#127866;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍻')">&#127867;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥂')">&#129346;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍷')">&#127863;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥃')">&#129347;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍸')">&#127870;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍹')">&#127865;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍾')">&#127870;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥤')">&#129380;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥛')">&#129371;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍼')">&#128276;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🧃')">&#129380;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🧉')">&#129381;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🧊')">&#129482;</span>
+          </div>
+        </div>
+
+        <!-- Food Emojis -->
+        <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+          <h2 class="text-xl font-bold mb-4">Food Emojis</h2>
+    
+          <div
+            class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+          >
+          <span class="cursor-pointer" onclick="copyEmoji('🍏')">&#127823;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍎')">&#127822;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍐')">&#127824;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍊')">&#127818;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍋')">&#127819;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍌')">&#127820;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍉')">&#127817;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍇')">&#127815;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍓')">&#127827;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🫐')">&#129744;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍈')">&#127816;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍒')">&#127826;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍑')">&#127825;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥭')">&#129389;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍍')">&#127821;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥥')">&#129373;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥝')">&#129373;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍅')">&#127813;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍆')">&#127814;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥑')">&#129361;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥒')">&#129362;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥬')">&#129367;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥦')">&#129382;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🫑')">&#129745;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌽')">&#127805;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥕')">&#129365;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🫒')">&#129746;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥔')">&#129364;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍠')">&#127840;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍯')">&#127855;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥐')">&#129360;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥯')">&#129391;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍞')">&#127838;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥖')">&#129366;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥨')">&#129388;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🧀')">&#129472;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥚')">&#129370;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍳')">&#127859;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥓')">&#129363;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥩')">&#129385;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍗')">&#127831;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍖')">&#127830;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦴')">&#129461;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌭')">&#127789;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍔')">&#127828;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍟')">&#127839;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍕')">&#127829;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥪')">&#129386;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥙')">&#129384;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🧆')">&#129478;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌮')">&#127790;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌯')">&#127791;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥗')">&#129383;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥘')">&#129368;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥫')">&#129374;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍝')">&#127837;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍜')">&#127836;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍲')">&#127834;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍛')">&#127835;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🫕')">&#129749;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍣')">&#127843;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍤')">&#127844;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍙')">&#127833;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍚')">&#127834;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍘')">&#127832;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍥')">&#127845;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥠')">&#129372;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥮')">&#129373;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍢')">&#127842;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍡')">&#127841;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍧')">&#127847;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍨')">&#127848;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍦')">&#127846;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥧')">&#129383;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍰')">&#127856;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎂')">&#127874;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🧁')">&#129473;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍮')">&#127853;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍭')">&#127854;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍬')">&#127852;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍫')">&#127851;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍿')">&#127871;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🧂')">&#129474;</span>
+          </div>
+        </div>
+
+        <!-- Plants Emojis -->
+        <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+          <h2 class="text-xl font-bold mb-4">Plants Emojis</h2>
+    
+          <div
+            class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+          >
+          <span class="cursor-pointer" onclick="copyEmoji('🌱')">&#127793;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌿')">&#127807;</span>
+<span class="cursor-pointer" onclick="copyEmoji('☘️')">&#9752;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍀')">&#127808;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎍')">&#127885;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎋')">&#127883;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍃')">&#127811;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍂')">&#127810;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍁')">&#127809;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍇')">&#127815;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍈')">&#127816;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍉')">&#127817;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍊')">&#127818;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍋')">&#127819;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍌')">&#127820;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍍')">&#127821;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍎')">&#127822;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍏')">&#127823;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍐')">&#127824;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍑')">&#127825;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍒')">&#127826;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🍓')">&#127827;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥥')">&#129373;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥝')">&#129373;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥭')">&#129389;</span>
+          </div>
+        </div>
+    
+        <!-- Sports Emojis -->
+        <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+          <h2 class="text-xl font-bold mb-4">Sport Emojis</h2>
+    
+          <div
+            class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+          >
+          <span class="cursor-pointer" onclick="copyEmoji('⚽')">&#9917;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏀')">&#127936;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏈')">&#127944;</span>
+<span class="cursor-pointer" onclick="copyEmoji('⚾')">&#9918;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎾')">&#127934;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏐')">&#127952;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏉')">&#127945;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎱')">&#127921;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏓')">&#127955;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏸')">&#127956;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥅')">&#129351;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏒')">&#127954;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏑')">&#127953;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏏')">&#127951;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥍')">&#129349;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🏹')">&#127992;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥊')">&#129354;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥋')">&#129355;</span>
+<span class="cursor-pointer" onclick="copyEmoji('⛳')">&#9971;</span>
+<span class="cursor-pointer" onclick="copyEmoji('⛸️')">&#9976;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎣')">&#127907;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🤿')">&#129342;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎽')">&#127933;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎿')">&#127935;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🛷')">&#129349;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥌')">&#129356;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🪃')">&#129683;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎮')">&#127918;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕹️')">&#128377;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎲')">&#127922;</span>
+<span class="cursor-pointer" onclick="copyEmoji('♟️')">&#9823;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🧩')">&#129513;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🧸')">&#129504;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🪀')">&#129680;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🪁')">&#129681;</span>
+
+          </div>
+        </div>
+
+        <!-- Game Emojis -->
+        <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+          <h2 class="text-xl font-bold mb-4">Game Emojis</h2>
+    
+          <div
+            class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+          >
+          <span class="cursor-pointer" onclick="copyEmoji('🎮')">&#127918;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕹️')">&#128377;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎲')">&#127922;</span>
+<span class="cursor-pointer" onclick="copyEmoji('♟️')">&#9823;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🧩')">&#129513;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🧸')">&#129504;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🪀')">&#129680;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🪁')">&#129681;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎯')">&#127919;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎳')">&#127923;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎰')">&#127920;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎲')">&#127922;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🃏')">&#127183;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🀄')">&#126980;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎴')">&#127924;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎭')">&#127917;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🖼️')">&#128247;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎨')">&#127912;</span>
+          </div>
+        </div>
+
+        <!-- Globe and Sky Emojis -->
+        <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+          <h2 class="text-xl font-bold mb-4">Globe and Sky Emojis</h2>
+    
+          <div
+            class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+          >
+          <span class="cursor-pointer" onclick="copyEmoji('🌍')">&#127757;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌎')">&#127758;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌏')">&#127759;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌐')">&#127760;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🪐')">&#129680;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌠')">&#127776;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌌')">&#127756;</span>
+<span class="cursor-pointer" onclick="copyEmoji('☁️')">&#9729;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('⛅')">&#9925;</span>
+<span class="cursor-pointer" onclick="copyEmoji('⛈️')">&#9928;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌤️')">&#127774;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌥️')">&#127775;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌦️')">&#127776;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌧️')">&#127777;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌨️')">&#127778;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌩️')">&#127780;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌪️')">&#127786;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌫️')">&#127787;&#65039;</span>
+          </div>
+        </div>
+
+        <!-- Moon Faces Emojis -->
+        <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+          <h2 class="text-xl font-bold mb-4">Moon Faces Emojis</h2>
+    
+          <div
+            class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+          >
+          <span class="cursor-pointer" onclick="copyEmoji('🌑')">&#127761;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌒')">&#127762;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌓')">&#127763;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌔')">&#127764;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌕')">&#127765;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌖')">&#127766;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌗')">&#127767;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌘')">&#127768;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌙')">&#127769;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌚')">&#127770;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌛')">&#127771;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌜')">&#127772;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌝')">&#127773;</span>
+          </div>
+        </div>
+
+        <!-- Sun and Star Emojis -->
+        <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+          <h2 class="text-xl font-bold mb-4">Sun and Star Emojis</h2>
+    
+          <div
+            class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+          >
+          <span class="cursor-pointer" onclick="copyEmoji('☀️')">&#9728;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌞')">&#127774;</span>
+<span class="cursor-pointer" onclick="copyEmoji('⭐')">&#11088;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌟')">&#127775;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌠')">&#127776;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌌')">&#127756;</span>
+<span class="cursor-pointer" onclick="copyEmoji('☁️')">&#9729;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('⛅')">&#9925;</span>
+<span class="cursor-pointer" onclick="copyEmoji('⛈️')">&#9928;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌤️')">&#127774;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌥️')">&#127775;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌦️')">&#127776;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌧️')">&#127777;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌨️')">&#127778;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌩️')">&#127780;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌪️')">&#127786;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌫️')">&#127787;&#65039;</span>
+          </div>
+        </div>
+
+        <!-- Weather Emojis -->
+        <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+          <h2 class="text-xl font-bold mb-4">Weather Emojis</h2>
+    
+          <div
+            class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+          >
+          <span class="cursor-pointer" onclick="copyEmoji('☀️')">&#9728;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌤️')">&#127774;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('⛅')">&#9925;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌥️')">&#127775;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌦️')">&#127776;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌧️')">&#127777;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌨️')">&#127778;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌩️')">&#127780;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌪️')">&#127786;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌫️')">&#127787;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌬️')">&#127788;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌀')">&#128168;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌈')">&#127752;</span>
+<span class="cursor-pointer" onclick="copyEmoji('☂️')">&#9730;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('☔')">&#9730;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('⚡')">&#9889;</span>
+<span class="cursor-pointer" onclick="copyEmoji('❄️')">&#10052;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('☃️')">&#9731;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('⛄')">&#9924;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🔥')">&#128293;</span>
+<span class="cursor-pointer" onclick="copyEmoji('💧')">&#128167;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🌊')">&#127754;</span>
+          </div>
+        </div>
+
+        <!-- Clothing Emojis -->
+        <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+          <h2 class="text-xl font-bold mb-4">Clothing Emojis</h2>
+    
+          <div
+            class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+          >
+          <span class="cursor-pointer" onclick="copyEmoji('🎩')">&#127913;</span>
+<span class="cursor-pointer" onclick="copyEmoji('👒')">&#128082;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎓')">&#127891;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🧢')">&#129505;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🪖')">&#129685;</span>
+<span class="cursor-pointer" onclick="copyEmoji('⛑️')">&#9937;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('👑')">&#128081;</span>
+<span class="cursor-pointer" onclick="copyEmoji('👝')">&#128093;</span>
+<span class="cursor-pointer" onclick="copyEmoji('👛')">&#128091;</span>
+<span class="cursor-pointer" onclick="copyEmoji('👜')">&#128092;</span>
+<span class="cursor-pointer" onclick="copyEmoji('💼')">&#128188;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎒')">&#127890;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🛍️')">&#128717;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('👓')">&#128083;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🕶️')">&#128374;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥽')">&#129418;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥼')">&#129473;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🦺')">&#129477;</span>
+<span class="cursor-pointer" onclick="copyEmoji('👔')">&#128084;</span>
+<span class="cursor-pointer" onclick="copyEmoji('👕')">&#128085;</span>
+<span class="cursor-pointer" onclick="copyEmoji('👖')">&#128086;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🧣')">&#129507;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🧤')">&#129508;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🧥')">&#129509;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🧦')">&#129510;</span>
+<span class="cursor-pointer" onclick="copyEmoji('👗')">&#128087;</span>
+<span class="cursor-pointer" onclick="copyEmoji('👘')">&#128088;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥻')">&#129507;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🩱')">&#129649;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🩲')">&#129650;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🩳')">&#129651;</span>
+<span class="cursor-pointer" onclick="copyEmoji('👙')">&#128089;</span>
+<span class="cursor-pointer" onclick="copyEmoji('👚')">&#128090;</span>
+<span class="cursor-pointer" onclick="copyEmoji('👛')">&#128091;</span>
+<span class="cursor-pointer" onclick="copyEmoji('👠')">&#128096;</span>
+<span class="cursor-pointer" onclick="copyEmoji('👡')">&#128097;</span>
+<span class="cursor-pointer" onclick="copyEmoji('👢')">&#128098;</span>
+<span class="cursor-pointer" onclick="copyEmoji('👞')">&#128094;</span>
+<span class="cursor-pointer" onclick="copyEmoji('👟')">&#128095;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥾')">&#129406;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥿')">&#129407;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🩰')">&#129648;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🩴')">&#129652;</span>
+          </div>
+        </div>
+
+        <!-- Audio and Video Emojis -->
+        <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+          <h2 class="text-xl font-bold mb-4">Audio and Video Emojis</h2>
+    
+          <div
+            class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+          >
+          <span class="cursor-pointer" onclick="copyEmoji('🎤')">&#127908;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎧')">&#127911;</span>
+<span class="cursor-pointer" onclick="copyEmoji('📻')">&#128251;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎷')">&#127927;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎸')">&#127928;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎹')">&#127929;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎺')">&#127930;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎻')">&#127931;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🥁')">&#129345;</span>
+<span class="cursor-pointer" onclick="copyEmoji('📱')">&#128241;</span>
+<span class="cursor-pointer" onclick="copyEmoji('📲')">&#128242;</span>
+<span class="cursor-pointer" onclick="copyEmoji('☎️')">&#9742;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('📞')">&#128222;</span>
+<span class="cursor-pointer" onclick="copyEmoji('📟')">&#128223;</span>
+<span class="cursor-pointer" onclick="copyEmoji('📠')">&#128224;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🔋')">&#128267;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🔌')">&#128268;</span>
+<span class="cursor-pointer" onclick="copyEmoji('💻')">&#128187;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🖥️')">&#128421;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🖨️')">&#128424;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('⌨️')">&#9000;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🖱️')">&#128433;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🖲️')">&#128434;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('💽')">&#128189;</span>
+<span class="cursor-pointer" onclick="copyEmoji('💾')">&#128190;</span>
+<span class="cursor-pointer" onclick="copyEmoji('💿')">&#128191;</span>
+<span class="cursor-pointer" onclick="copyEmoji('📀')">&#128192;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🧮')">&#129518;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎥')">&#127909;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎬')">&#127916;</span>
+<span class="cursor-pointer" onclick="copyEmoji('📷')">&#128247;</span>
+<span class="cursor-pointer" onclick="copyEmoji('📸')">&#128248;</span>
+<span class="cursor-pointer" onclick="copyEmoji('📹')">&#128249;</span>
+<span class="cursor-pointer" onclick="copyEmoji('📼')">&#128250;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🔍')">&#128269;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🔎')">&#128270;</span>
+          </div>
+        </div>
+
+        <!-- Celebration Emojis -->
+        <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+          <h2 class="text-xl font-bold mb-4">Celebration Emojis</h2>
+    
+          <div
+            class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+          >
+          <span class="cursor-pointer" onclick="copyEmoji('🎉')">&#127881;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎊')">&#127882;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎈')">&#127880;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎂')">&#127874;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎁')">&#127873;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎀')">&#127872;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎇')">&#127879;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎆')">&#127878;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🧨')">&#129513;</span>
+<span class="cursor-pointer" onclick="copyEmoji('✨')">&#10024;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎐')">&#127888;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎎')">&#127886;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎑')">&#127889;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🖼️')">&#128247;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎨')">&#127912;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🎭')">&#127917;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🖌️')">&#128396;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🖍️')">&#128397;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('📝')">&#128221;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🖋️')">&#128395;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🖊️')">&#128394;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🖌️')">&#128396;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('📌')">&#128204;</span>
+<span class="cursor-pointer" onclick="copyEmoji('📍')">&#128205;</span>
+<span class="cursor-pointer" onclick="copyEmoji('📎')">&#128206;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🖇️')">&#128462;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('📏')">&#128207;</span>
+<span class="cursor-pointer" onclick="copyEmoji('📐')">&#128208;</span>
+<span class="cursor-pointer" onclick="copyEmoji('✂️')">&#9986;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🗃️')">&#128451;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🗄️')">&#128452;&#65039;</span>
+<span class="cursor-pointer" onclick="copyEmoji('🗑️')">&#128465;&#65039;</span>
+          </div>
+        </div>
+
+        <!-- Flags Emojis -->
+        <div class="w-full bg-white shadow-lg rounded-lg p-4 text-center">
+          <h2 class="text-xl font-bold mb-4">Flags Emojis</h2>
+    
+          <div
+            class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-2 sm:gap-1 md:gap-4 text-sm sm:text-base md:text-xl lg:text-3xl"
+          >
+          
+
+          </div>
+        </div>
+
+
+    <!-- Popup Toast Notification -->
+    <div
+      id="toast"
+      class="fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg opacity-0 transition-opacity duration-300"
+    >
+      Copied to clipboard!
+    </div>
+
+    <script src="assets/script.js" />
   </body>
 </html>
